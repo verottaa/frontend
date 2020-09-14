@@ -8,11 +8,13 @@ import {reducers, metaReducers} from './store/reducers';
 import {AuthModule} from './src/modules/auth/auth.module';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { TestModalComponent } from './src/components/test-modal/test-modal.component';
+import { LoginComponent } from './src/components/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TestModalComponent
+    TestModalComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
