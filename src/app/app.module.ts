@@ -9,22 +9,28 @@ import {AuthModule} from './src/modules/auth/auth.module';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { TestModalComponent } from './src/components/test-modal/test-modal.component';
 import { LoginComponent } from './src/components/login/login.component';
+import {ReactiveFormsModule} from '@angular/forms';
+import { DashboardComponent } from './src/components/dashboard/dashboard.component';
+import { SidebarComponent } from './src/components/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TestModalComponent,
-    LoginComponent
+    LoginComponent,
+    DashboardComponent,
+    SidebarComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    AuthModule,
-    NgbModule,
-    StoreModule.forRoot(reducers, {
-      metaReducers
-    })
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        AuthModule,
+        NgbModule,
+        StoreModule.forRoot(reducers, {
+            metaReducers
+        }),
+        ReactiveFormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
