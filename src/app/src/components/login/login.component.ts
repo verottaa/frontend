@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
+import {AuthService} from '../../services/auth/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +17,8 @@ export class LoginComponent implements OnInit {
 
   public form: FormGroup;
 
-  constructor(private router: Router,
+  constructor(private auth: AuthService,
+              private router: Router,
               private fb: FormBuilder) {
     this.form = fb.group({
       login: fb.control('', [Validators.required]),
@@ -30,7 +32,7 @@ export class LoginComponent implements OnInit {
   onSubmit(): void {
     if (!this.form.invalid && this.form.touched) {
       if (this.form.controls['login'].value === this.user.login && this.form.controls['password'].value === this.user.password) {
-        this.router.navigate(['/']);
+        this.router.navigate(['/dashboard']);
       }
     } else {
       this.form.markAllAsTouched();
