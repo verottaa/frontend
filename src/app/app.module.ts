@@ -12,6 +12,7 @@ import { LoginComponent } from './src/components/login/login.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { DashboardComponent } from './src/components/dashboard/dashboard.component';
 import { SidebarComponent } from './src/components/sidebar/sidebar.component';
+import { HeaderComponent } from './src/components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { SidebarComponent } from './src/components/sidebar/sidebar.component';
     TestModalComponent,
     LoginComponent,
     DashboardComponent,
-    SidebarComponent
+    SidebarComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

@@ -33,6 +33,7 @@
 .sidebar .nav-link {
   font-weight: 500;
   color: #333;
+  cursor: pointer;
 }
 
 .sidebar .nav-link .feather {
@@ -52,4 +53,10 @@
 .sidebar-heading {
   font-size: .75rem;
   text-transform: uppercase;
+}
+
+.feather {
+  width: 16px;
+  height: 16px;
+  vertical-align: text-bottom;
 }

@@ -1,34 +1,12 @@
 <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
   <div class="sidebar-sticky pt-3">
     <ul class="nav flex-column">
-      <li class="nav-item">
-        <a class="nav-link active">
-          <span data-feather="home"></span>
-          Новый сотрудник <span class="sr-only">(current)</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link">
-          <span data-feather="file"></span>
-          Планы обучения
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link">
-          <span data-feather="shopping-cart"></span>
-          Ведомости
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link">
-          <span data-feather="users"></span>
-          Оценка знаний
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link">
-          <span data-feather="bar-chart-2"></span>
-          Отчеты
+      <li class="nav-item" *ngFor="let item of menus">
+        <a class="nav-link"
+           [class.active]="currentMenuItem?.title === item.title"
+           (click)="onItemClick(item)">
+          <span data-feather="{{item.dataFeather}}"></span>
+          {{item.title}}
         </a>
       </li>
     </ul>
