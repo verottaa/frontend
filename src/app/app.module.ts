@@ -7,23 +7,14 @@ import {StoreModule} from '@ngrx/store';
 import {reducers, metaReducers} from './store/reducers';
 import {AuthModule} from './src/modules/auth/auth.module';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import { TestModalComponent } from './src/components/test-modal/test-modal.component';
-import { LoginComponent } from './src/components/login/login.component';
+import {LoginComponent} from './src/components/login/login.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { DashboardComponent } from './src/components/dashboard/dashboard.component';
-import { SidebarComponent } from './src/components/sidebar/sidebar.component';
-import { HeaderComponent } from './src/components/header/header.component';
-import { AddEmplComponent } from './src/components/add-empl/add-empl.component';
+import {DashboardModule} from './src/modules/dashboard/dashboard.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TestModalComponent,
     LoginComponent,
-    DashboardComponent,
-    SidebarComponent,
-    HeaderComponent,
-    AddEmplComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +25,8 @@ import { AddEmplComponent } from './src/components/add-empl/add-empl.component';
       metaReducers
     }),
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    DashboardModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

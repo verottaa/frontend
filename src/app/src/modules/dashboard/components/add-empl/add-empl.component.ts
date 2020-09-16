@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
+import {User} from '../../../../models/user';
 
 @Component({
   selector: 'app-add-empl',
@@ -28,7 +29,9 @@ export class AddEmplComponent implements OnInit {
 
 
   onSubmit(): void {
-    console.log(this.form.value);
+    const user = new User();
+    user.firstName = this.form.controls['surname'].value;
+    console.log(user);
   }
 
 }
