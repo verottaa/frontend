@@ -1,1 +1,28 @@
-<p>test-component works!</p>
+<app-header></app-header>
+
+<div class="container-fluid">
+    <app-sidebar></app-sidebar>
+    
+    <form [formGroup]="form">
+        <div class="form-group">
+           <label for="name" class="control-label col-sm-2">Имя</label>	
+           <div class="col-sm-10">
+              <input [formControl]="form.controls['name']" 
+              type="text" id="name" class="form-control" placeholder="Имя"/> 
+           </div>
+        </div>
+        <div class="form-group">
+           <label for="email" class="control-label col-sm-2" >E-mail</label>	  
+           <div class="col-sm-10">
+              <input [formControl]="form.controls['email']" 
+              type="email" id="email" class="form-control" placeholder="E-mail"/> 
+           </div>
+        </div>
+        <div class="form-group">
+           <div class="col-sm-offset-2 col-sm-10">
+              <input type="submit" class="btn btn-info" value="Отправить" />
+           </div>
+        </div>
+     </form>
+</div>
+

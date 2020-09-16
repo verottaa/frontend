@@ -8,18 +8,18 @@
       <div class="d-flex justify-content-center align-items-center">
         <form [formGroup]="form">
           <div class="form-group">
-            <label for="surname">Фамилия</label>
+            <label for="surname">Фамилия:</label>
             <input [formControl]="form.controls['surname']"
                    type="text" class="form-control" id="surname"
                    placeholder="Фамилия">
           </div>
           <div class="form-group">
-            <label for="name">Имя</label>
+            <label for="name">Имя:</label>
             <input [formControl]="form.controls['name']"
                    type="text" class="form-control" id="name" placeholder="Имя">
           </div>
           <div class="form-group">
-            <label for="patronymic">Отчество</label>
+            <label for="patronymic">Отчество:</label>
             <input [formControl]="form.controls['patronymic']"
                    type="text" class="form-control" id="patronymic"
                    placeholder="Отчество">
@@ -38,7 +38,7 @@
           </div>
 
           <div class="form-group">
-            <label for="branchSelect">Филиал</label>
+            <label for="branchSelect">Филиал:</label>
             <select [formControl]="form.controls['branch']" class="form-control" id="branchSelect">
               <option>Нижний Новгород</option>
               <option>Москва</option>
@@ -48,7 +48,7 @@
             </select>
           </div>
           <div class="form-group">
-            <label for="departmentSelect">Отдел</label>
+            <label for="departmentSelect">Отдел:</label>
             <select [formControl]="form.controls['department']" class="form-control" id="departmentSelect">
               <option>АИС №2</option>
               <option>АИС №4</option>

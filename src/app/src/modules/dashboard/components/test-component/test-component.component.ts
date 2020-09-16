@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-test-component',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TestComponentComponent implements OnInit {
 
-  constructor() { }
+  public form: FormGroup;
+
+  constructor(private fb: FormBuilder) { 
+    this.form = fb.group({
+      name: fb.control('', [Validators.required]),
+      email: fb.control('', [Validators.required])
+    });
+  }
 
   ngOnInit(): void {
+  }
+
+
+  onSubmit(): void {
+    console.log('GGXX-XXGG-GGXX-XXGG');
   }
 
 }
