@@ -13,6 +13,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { DashboardComponent } from './src/components/dashboard/dashboard.component';
 import { SidebarComponent } from './src/components/sidebar/sidebar.component';
 import { HeaderComponent } from './src/components/header/header.component';
+import { AddEmplComponent } from './src/components/add-empl/add-empl.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { HeaderComponent } from './src/components/header/header.component';
     LoginComponent,
     DashboardComponent,
     SidebarComponent,
-    HeaderComponent
+    HeaderComponent,
+    AddEmplComponent
   ],
   imports: [
     BrowserModule,
