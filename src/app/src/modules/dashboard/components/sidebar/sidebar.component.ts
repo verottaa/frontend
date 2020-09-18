@@ -1,4 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-sidebar',
@@ -7,29 +8,23 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
 
-  menus: MenuItem[] = [
-    new MenuItem(1, 'home', 'Новый сотрудник', './add-empl'),
-    new MenuItem(2, 'file', 'Планы обучения', './other'),
-    new MenuItem(3, 'shopping-cart', 'Ведомости', './other'),
-    new MenuItem(4, 'users', 'Оценка знаний', './other'),
-    new MenuItem(5, 'bar-chart-2', 'Отчеты', './other'),
-  ];
+  @Input() menus: MenuItem[] = [];
+  @Input() currentItem: MenuItem;
+  @Output() currentItemChange = new EventEmitter<MenuItem>();
 
-  currentMenuItem: MenuItem = this.menus[0];
-
-  constructor() {
+  constructor(private router: Router) {
   }
 
   ngOnInit(): void {
   }
 
   onItemClick(item): void {
-    this.currentMenuItem = item;
+    this.currentItemChange.emit(item);
   }
 
 }
 
-class MenuItem {
+export class MenuItem {
   public id: number;
   public dataFeather: string;
   public title: string;

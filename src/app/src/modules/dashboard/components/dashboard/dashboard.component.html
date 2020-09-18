@@ -2,11 +2,89 @@
 
 <div class="container-fluid">
   <div class="row">
-    <app-sidebar></app-sidebar>
+    <app-sidebar [(currentItem)]="currentMenuItem" [menus]="menus"></app-sidebar>
 
     <main role="main" class="w-100 h-100 col-md-9 ml-sm-auto col-lg-10 px-md-4">
       <div class="main-wrapper">
-        <router-outlet></router-outlet>
+        <ng-container *ngIf="currentMenuItem.href === '/add-empl'">
+          <form [formGroup]="addEmployeeForm">
+            <div class="form-group">
+              <label for="surname">Фамилия:</label>
+              <input [formControl]="addEmployeeForm.controls['surname']"
+                     type="text" class="form-control" id="surname"
+                     placeholder="Фамилия">
+            </div>
+            <div class="form-group">
+              <label for="name">Имя:</label>
+              <input [formControl]="addEmployeeForm.controls['name']"
+                     type="text" class="form-control" id="name" placeholder="Имя">
+            </div>
+            <div class="form-group">
+              <label for="patronymic">Отчество:</label>
+              <input [formControl]="addEmployeeForm.controls['patronymic']"
+                     type="text" class="form-control" id="patronymic"
+                     placeholder="Отчество">
+            </div>
+
+            <div class="form-group">
+              <label for="datepicker">Дата приема на работу:</label>
+              <div class="input-group">
+                <input [formControl]="addEmployeeForm.controls['dateOfStart']" id="datepicker" class="form-control"
+                       placeholder="yyyy-mm-dd"
+                       name="dp" ngbDatepicker #d="ngbDatepicker">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="branchSelect">Филиал:</label>
+              <select [formControl]="addEmployeeForm.controls['branch']" class="form-control" id="branchSelect">
+                <option>Нижний Новгород</option>
+                <option>Москва</option>
+                <option>Краснодар</option>
+                <option>Кемерово</option>
+                <option>Хабаровск</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="departmentSelect">Отдел:</label>
+              <select [formControl]="addEmployeeForm.controls['department']" class="form-control" id="departmentSelect">
+                <option>АИС №2</option>
+                <option>АИС №4</option>
+                <option>ДБА</option>
+              </select>
+            </div>
+
+            <button type="button" class="btn btn-primary w-100" (click)="onAddEmployeeFormSubmit()"
+                    [disabled]="addEmployeeForm.invalid || !addEmployeeForm.touched">Submit
+            </button>
+          </form>
+        </ng-container>
+        <ng-container *ngIf="currentMenuItem.href === '/other'">
+          <form [formGroup]="otherForm" (ngSubmit)="onOtherFormSubmit()">
+            <div class="form-group">
+              <label for="name" class="control-label col-sm-2">Имя</label>
+              <div class="col-sm-10">
+                <input [formControl]="otherForm.controls['name']"
+                       type="text" id="name" class="form-control" placeholder="Имя"/>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email" class="control-label col-sm-2">E-mail</label>
+              <div class="col-sm-10">
+                <input [formControl]="otherForm.controls['email']"
+                       type="email" id="email" class="form-control" placeholder="E-mail"/>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-offset-2 col-sm-10">
+                <input type="submit" class="btn btn-info" value="Отправить"/>
+              </div>
+            </div>
+          </form>
+        </ng-container>
       </div>
     </main>
   </div>
