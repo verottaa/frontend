@@ -2,7 +2,7 @@
     <div class="form-group">
         
         <label for="emplSelect">Сотрудник:</label>
-        <select [formControl]="plansForm.controls['']" class="form-control" id="emplSelect">
+        <select [formControl]="plansForm.controls['empl']" class="form-control" id="emplSelect">
           <option>Сотрудник 1</option>
           <option>Сотрудник 2</option>
           <option>Сотрудник 3</option>
@@ -11,7 +11,7 @@
 
       <div class="form-group">
         <label for="directionSelect">Направление:</label>
-        <select [formControl]="plansForm.controls['']" class="form-control" id="directionSelect">
+        <select [formControl]="plansForm.controls['direction']" class="form-control" id="directionSelect">
           <option>Тестировщики-автоматизаторы</option>
           <option>Дежурные ПО и БД</option>
           <option>Технические эксперты</option>
@@ -24,14 +24,14 @@
 
         <div class="input-group">
             С:
-          <input [formControl]="plansForm.controls['']" id="datepicker" class="form-control"
+          <input [formControl]="plansForm.controls['periodOfStudy']" id="datepicker" class="form-control"
                  placeholder="yyyy-mm-dd"
                  name="dp" ngbDatepicker #d="ngbDatepicker">
           <div class="input-group-append">
             <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
           </div>
             По:
-            <input [formControl]="plansForm.controls['dateOfStart']" id="datepicker" class="form-control"
+            <input [formControl]="plansForm.controls['periodOfStudy']" id="datepicker" class="form-control"
                    placeholder="yyyy-mm-dd"
                    name="dp" ngbDatepicker #d="ngbDatepicker">
             <div class="input-group-append">
@@ -42,7 +42,7 @@
 
       <div class="form-group">
         <label for="mentorSelect">Наставник:</label>
-        <select [formControl]="plansForm.controls['']" class="form-control" id="mentorSelect">
+        <select [formControl]="plansForm.controls['mentor']" class="form-control" id="mentorSelect">
           <option>Наставник 1</option>
           <option>Наставник 2</option>
           <option>Наставник 3</option>
@@ -53,14 +53,14 @@
       Пункты плана:
       <div class="form-group">
         <label for="project_task">Проект/задание:</label>
-        <input [formControl]="plansForm.controls['']"
+        <input [formControl]="plansForm.controls['projectTask']"
                type="text" class="form-control" id="project_task"
                placeholder="text">
       </div>
 
       <div class="form-group">
         <label for="conductingSelect">Форма проведения:</label>
-        <select [formControl]="plansForm.controls['']" class="form-control" id="conductingSelect">
+        <select [formControl]="plansForm.controls['conducting']" class="form-control" id="conductingSelect">
           <option>1</option>
           <option>2</option>
           <option>3</option>
@@ -73,14 +73,14 @@
 
         <div class="input-group">
             С:
-          <input [formControl]="plansForm.controls['dateOfStart']" id="datepicker" class="form-control"
+          <input [formControl]="plansForm.controls['peridoPlan']" id="datepicker" class="form-control"
                  placeholder="yyyy-mm-dd"
                  name="dp" ngbDatepicker #d="ngbDatepicker">
           <div class="input-group-append">
             <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
           </div>
             По:
-            <input [formControl]="plansForm.controls['dateOfStart']" id="datepicker" class="form-control"
+            <input [formControl]="plansForm.controls['peridoPlan']" id="datepicker" class="form-control"
                    placeholder="yyyy-mm-dd"
                    name="dp" ngbDatepicker #d="ngbDatepicker">
             <div class="input-group-append">
@@ -94,14 +94,14 @@
 
         <div class="input-group">
             С:
-          <input [formControl]="plansForm.controls['dateOfStart']" id="datepicker" class="form-control"
+          <input [formControl]="plansForm.controls['peridoFact']" id="datepicker" class="form-control"
                  placeholder="yyyy-mm-dd"
                  name="dp" ngbDatepicker #d="ngbDatepicker">
           <div class="input-group-append">
             <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
           </div>
             По:
-            <input [formControl]="plansForm.controls['dateOfStart']" id="datepicker" class="form-control"
+            <input [formControl]="plansForm.controls['peridoFact']" id="datepicker" class="form-control"
                    placeholder="yyyy-mm-dd"
                    name="dp" ngbDatepicker #d="ngbDatepicker">
             <div class="input-group-append">
@@ -112,7 +112,7 @@
 
       <div class="form-group">
         <label for="curatorSelect">Куратор:</label>
-        <select [formControl]="plansForm.controls['']" class="form-control" id="curatorSelect">
+        <select [formControl]="plansForm.controls['curator']" class="form-control" id="curatorSelect">
           <option>Куратор 1</option>
           <option>Куратор 2</option>
           <option>Куратор 3</option>
@@ -122,14 +122,14 @@
 
       <div class="form-group">
         <label for="materialLink">Ссылка на материалы:</label>
-        <input [formControl]="plansForm.controls['']"
+        <input [formControl]="plansForm.controls['materialLink']"
                type="text" class="form-control" id="materialLink"
                placeholder="text">
       </div>
 
       <div class="form-group">
         <label for="note">Примечание:</label>
-        <input [formControl]="plansForm.controls['']"
+        <input [formControl]="plansForm.controls['note']"
                type="text" class="form-control" id="note"
                placeholder="text">
       </div>
