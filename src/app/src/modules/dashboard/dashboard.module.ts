@@ -8,6 +8,7 @@ import {AddEmplComponent} from './components/add-empl/add-empl.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { TestComponentComponent } from './components/test-component/test-component.component';
+import { PlansComponent } from './components/plans/plans.component';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { TestComponentComponent } from './components/test-component/test-compone
     SidebarComponent,
     AddEmplComponent,
     TestComponentComponent,
+    PlansComponent,
   ],
   imports: [
     CommonModule,

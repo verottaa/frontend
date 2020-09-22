@@ -23,6 +23,7 @@ export class DashboardComponent implements OnInit {
   dateTime: NgbDateStruct;
   public addEmployeeForm: FormGroup;
   public otherForm: FormGroup;
+  plansForm: FormGroup;
 
   constructor(private fb: FormBuilder) {
     this.addEmployeeForm = fb.group({
@@ -36,6 +37,9 @@ export class DashboardComponent implements OnInit {
     this.otherForm = fb.group({
       name: fb.control('', [Validators.required]),
       email: fb.control('', [Validators.required])
+    });
+    this.plansForm = fb.group({
+      
     });
   }
 
