@@ -62,6 +62,8 @@
             </button>
           </form>
         </ng-container>
+
+        <!-- Переход на 2 вкладку -->
         <ng-container *ngIf="currentMenuItem.href === '/other'">
           <form [formGroup]="otherForm" (ngSubmit)="onOtherFormSubmit()">
             <div class="form-group">
@@ -85,6 +87,8 @@
             </div>
           </form>
         </ng-container>
+
+        
       </div>
     </main>
   </div>
