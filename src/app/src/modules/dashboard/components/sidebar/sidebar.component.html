@@ -3,9 +3,8 @@
     <ul class="nav flex-column">
       <li class="nav-item" *ngFor="let item of menus">
         <a class="nav-link"
-           [class.active]="currentItem?.title === item.title"
-           (click)="onItemClick(item)">
-          <span data-feather="{{item.dataFeather}}"></span>
+           [routerLink]="item.route"
+           [class.active]="currentMenuItem === item.type">
           {{item.title}}
         </a>
       </li>

@@ -4,11 +4,10 @@ import {DashboardRoutingModule} from './dashboard-routing.module';
 import {DashboardComponent} from './components/dashboard/dashboard.component';
 import {HeaderComponent} from './components/header/header.component';
 import {SidebarComponent} from './components/sidebar/sidebar.component';
-import {AddEmplComponent} from './components/add-empl/add-empl.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import { TestComponentComponent } from './components/test-component/test-component.component';
-import { PlansComponent } from './components/plans/plans.component';
+import {PlansComponent} from './components/plans/plans.component';
+import {CreateEmployeeComponent} from './components/create-employee/create-employee.component';
 
 
 @NgModule({
@@ -16,8 +15,7 @@ import { PlansComponent } from './components/plans/plans.component';
     DashboardComponent,
     HeaderComponent,
     SidebarComponent,
-    AddEmplComponent,
-    TestComponentComponent,
+    CreateEmployeeComponent,
     PlansComponent,
   ],
   imports: [

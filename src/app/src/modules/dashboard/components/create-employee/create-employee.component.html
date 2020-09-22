@@ -1,0 +1,54 @@
+<form [formGroup]="form">
+  <div class="form-group">
+    <label for="surname">Фамилия:</label>
+    <input [formControl]="form.controls['surname']"
+           type="text" class="form-control" id="surname"
+           placeholder="Фамилия">
+  </div>
+  <div class="form-group">
+    <label for="name">Имя:</label>
+    <input [formControl]="form.controls['name']"
+           type="text" class="form-control" id="name" placeholder="Имя">
+  </div>
+  <div class="form-group">
+    <label for="patronymic">Отчество:</label>
+    <input [formControl]="form.controls['patronymic']"
+           type="text" class="form-control" id="patronymic"
+           placeholder="Отчество">
+  </div>
+
+  <div class="form-group">
+    <label for="datepicker">Дата приема на работу:</label>
+    <div class="input-group">
+      <input [formControl]="form.controls['dateOfStart']" id="datepicker" class="form-control"
+             placeholder="yyyy-mm-dd"
+             name="dp" ngbDatepicker #d="ngbDatepicker">
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="branchSelect">Филиал:</label>
+    <select [formControl]="form.controls['branch']" class="form-control" id="branchSelect">
+      <option>Нижний Новгород</option>
+      <option>Москва</option>
+      <option>Краснодар</option>
+      <option>Кемерово</option>
+      <option>Хабаровск</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="departmentSelect">Отдел:</label>
+    <select [formControl]="form.controls['department']" class="form-control" id="departmentSelect">
+      <option>АИС №2</option>
+      <option>АИС №4</option>
+      <option>ДБА</option>
+    </select>
+  </div>
+
+  <button type="button" class="btn btn-primary w-100" (click)="onSubmit()"
+          [disabled]="form.invalid || !form.touched">Submit
+  </button>
+</form>

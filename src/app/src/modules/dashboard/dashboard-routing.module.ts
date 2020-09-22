@@ -1,12 +1,11 @@
 import {RouterModule, Routes} from '@angular/router';
-import {AddEmplComponent} from './components/add-empl/add-empl.component';
 import {NgModule} from '@angular/core';
-import {TestComponentComponent} from './components/test-component/test-component.component';
+import {DashboardComponent} from './components/dashboard/dashboard.component';
+import {DashboardType} from '../../models/dashboard';
 
 const routes: Routes = [
-  {path: '', redirectTo: 'add-empl', pathMatch: 'full'},
-  {path: 'add-empl', component: AddEmplComponent},
-  {path: 'other', component: TestComponentComponent},
+  {path: '', pathMatch: 'full', redirectTo: `/dashboard/${DashboardType.CREATE_EMPLOYEE}`},
+  {path: ':type', component: DashboardComponent},
 ];
 
 @NgModule({

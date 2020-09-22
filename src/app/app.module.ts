@@ -10,7 +10,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {LoginComponent} from './src/components/login/login.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {DashboardModule} from './src/modules/dashboard/dashboard.module';
-import { AddEmplComponent } from './src/modules/dashboard/components/add-empl/add-empl.component';
+import { CreateEmployeeComponent } from './src/modules/dashboard/components/create-employee/create-employee.component';
 import { DashboardComponent } from './src/modules/dashboard/components/dashboard/dashboard.component';
 import { HeaderComponent } from './src/modules/dashboard/components/header/header.component';
 import { SidebarComponent } from './src/modules/dashboard/components/sidebar/sidebar.component';
