@@ -23,8 +23,6 @@ export class SidebarComponent implements OnInit {
     this.activatedRoute.paramMap.subscribe(params => {
       if (params.has('type')) {
         this.currentMenuItem = (params.get('type') as DashboardType);
-      } else {
-        this.router.navigate([`/dashboard/${DashboardType.CREATE_EMPLOYEE}`]);
       }
     });
   }
