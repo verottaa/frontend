@@ -7,3 +7,12 @@ export class User {
   branch: string;
   department: string;
 }
+
+export class UserCredentials {
+  login: string;
+  password: string;
+}
+
+export class UserCreatedId {
+  id: string;
+}
