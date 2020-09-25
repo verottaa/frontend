@@ -4,7 +4,7 @@ import {DashboardComponent} from './components/dashboard/dashboard.component';
 import {DashboardType} from '../../models/dashboard';
 
 const routes: Routes = [
-  {path: '', pathMatch: 'full', redirectTo: `/dashboard/${DashboardType.CREATE_EMPLOYEE}`},
+  {path: '', pathMatch: 'full', redirectTo: `/dashboard/${DashboardType.EMPLOYERS}`},
   {path: ':type', component: DashboardComponent},
 ];
 

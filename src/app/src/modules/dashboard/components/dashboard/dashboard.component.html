@@ -6,8 +6,8 @@
 
     <main role="main" class="w-100 h-100 col-md-9 ml-sm-auto col-lg-10 px-md-4">
       <div class="main-wrapper">
-        <ng-container *ngIf="currentDashboard === dashboardType.CREATE_EMPLOYEE">
-          <app-create-employee></app-create-employee>
+        <ng-container *ngIf="currentDashboard === dashboardType.EMPLOYERS">
+          <app-employers></app-employers>
         </ng-container>
         <ng-container *ngIf="currentDashboard === dashboardType.PLANS">
           <app-plans></app-plans>

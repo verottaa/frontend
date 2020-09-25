@@ -1,6 +1,6 @@
 export enum DashboardType {
   NONE = '',
-  CREATE_EMPLOYEE = 'create-employee',
+  EMPLOYERS = 'employers',
   PLANS = 'plans',
   BILLS = 'bills',
   APPRAISAL = 'appraisal',

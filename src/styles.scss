@@ -10,3 +10,7 @@ body {
   width: 100%;
   font-size: .875rem;
 }
+
+button:focus.close {
+  outline: none;
+}

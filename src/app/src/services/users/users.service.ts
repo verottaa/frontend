@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {environment} from '../../../../environments/environment';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {User, UserCreatedId} from '../../models/user';
+import {CreateUserDto, User, UserCreatedId} from '../../models/user';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +15,7 @@ export class UsersService {
   /**
    * Адрес для запросов
    */
-  baseUrl = environment.host + environment.port + environment.apiRoute + `/users/`;
+  baseUrl = environment.host + environment.port + environment.apiRoute + `users/`;
 
   constructor(private http: HttpClient) {
   }
@@ -25,7 +25,7 @@ export class UsersService {
    * Метод создания пользователя
    * @param user - новый пользователь
    */
-  public createUser(user: User): Observable<UserCreatedId> {
+  public createUser(user: CreateUserDto): Observable<UserCreatedId> {
     return this.http.post<UserCreatedId>(this.baseUrl, user);
   }
 

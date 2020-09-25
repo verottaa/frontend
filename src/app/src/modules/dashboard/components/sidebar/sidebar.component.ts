@@ -10,7 +10,7 @@ import {DashboardType} from '../../../../models/dashboard';
 export class SidebarComponent implements OnInit {
 
   menus: MenuItem[] = [
-    new MenuItem(1, DashboardType.CREATE_EMPLOYEE, 'Новый сотрудник', `/dashboard/${DashboardType.CREATE_EMPLOYEE}`),
+    new MenuItem(1, DashboardType.EMPLOYERS, 'Сотрудники', `/dashboard/${DashboardType.EMPLOYERS}`),
     new MenuItem(2, DashboardType.PLANS, 'Планы обучения', `/dashboard/${DashboardType.PLANS}`),
     new MenuItem(3, DashboardType.BILLS, 'Ведомости', `/dashboard/${DashboardType.BILLS}`),
     new MenuItem(4, DashboardType.APPRAISAL, 'Оценка знаний', `/dashboard/${DashboardType.APPRAISAL}`),

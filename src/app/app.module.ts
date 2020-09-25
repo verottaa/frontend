@@ -9,12 +9,19 @@ import {AuthModule} from './src/modules/auth/auth.module';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {DashboardModule} from './src/modules/dashboard/dashboard.module';
+import {ConfirmModalComponent} from './src/components/shared-components/modals/confirm-modal/confirm-modal.component';
+import {ComponentModalComponent} from './src/components/shared-components/modals/component-modal/component-modal.component';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import {AuthInterceptor} from './src/interceptors/auth-interceptor.service';
 
 @NgModule({
   declarations: [
     AppComponent,
+    ConfirmModalComponent,
+    ComponentModalComponent,
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     AuthModule,
@@ -26,7 +33,9 @@ import {DashboardModule} from './src/modules/dashboard/dashboard.module';
     FormsModule,
     DashboardModule,
   ],
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
