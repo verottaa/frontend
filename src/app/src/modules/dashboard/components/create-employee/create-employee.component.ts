@@ -8,12 +8,13 @@ import {User} from '../../../../models/user';
   templateUrl: './create-employee.component.html',
   styleUrls: ['./create-employee.component.scss']
 })
+
 export class CreateEmployeeComponent implements OnInit {
 
   dateTime: NgbDateStruct;
   public form: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+constructor(private fb: FormBuilder) {
     this.form = fb.group({
       surname: fb.control('', [Validators.required]),
       name: fb.control('', [Validators.required]),
@@ -25,6 +26,7 @@ export class CreateEmployeeComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
   }
 
 
