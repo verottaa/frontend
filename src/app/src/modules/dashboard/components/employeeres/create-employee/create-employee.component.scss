@@ -1,0 +1,16 @@
+.popup{
+  padding: 30px;
+  min-height: 100%;
+  position: relative;
+}
+
+.popup_close{
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  background: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  outline: 0 !important;
+  border: 0;
+  padding: 0;
+}

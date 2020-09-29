@@ -3,6 +3,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
 import {CreateUserDto, User} from '../../../../../models/user';
 import {UsersService} from '../../../../../services/users/users.service';
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-create-employee',
@@ -16,7 +17,8 @@ export class CreateEmployeeComponent implements OnInit {
   public form: FormGroup;
 
   constructor(private fb: FormBuilder,
-              private usersService: UsersService) {
+              private usersService: UsersService,
+              private modalService: NgbModal) {
     this.form = fb.group({
       surname: fb.control('', [Validators.required]),
       name: fb.control('', [Validators.required]),
@@ -34,14 +36,17 @@ export class CreateEmployeeComponent implements OnInit {
 
   onSubmit(): void {
     const user = new CreateUserDto();
-    user.firstName = this.form.controls['surname'].value;
-    user.lastName = this.form.controls['name'].value;
-    user.patronymic = this.form.controls['patronymic'].value;
-    user.dateOfStart = this.form.controls['dateOfStart'].value;
-    user.branch = this.form.controls['branch'].value;
-    user.department = this.form.controls['department'].value;
+    user.firstName = this.form.controls.surname.value;
+    user.lastName = this.form.controls.name.value;
+    user.patronymic = this.form.controls.patronymic.value;
+    user.dateOfStart = this.form.controls.dateOfStart.value;
+    user.branch = this.form.controls.branch.value;
+    user.department = this.form.controls.department.value;
     this.usersService.createUser(user).subscribe(id => {
     });
   }
 
+  CloseModal(): void {
+    const modalRef = this.modalService.dismissAll(CreateEmployeeComponent);
+  }
 }
