@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {CreateEmployeeComponent} from '../employeeres/create-employee/create-employee.component';
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-plans',
@@ -9,7 +11,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class PlansComponent implements OnInit {
   plansForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder,
+              private modalService: NgbModal) {
     this.plansForm = fb.group({
       empl: fb.control('', [Validators.required]),
       direction: fb.control('', [Validators.required]),
@@ -26,5 +29,13 @@ export class PlansComponent implements OnInit {
    }
 
   ngOnInit(): void {
+  }
+
+  softAndDB(): void {
+    const modalRef = this.modalService.open(CreateEmployeeComponent, {centered: true, backdrop: 'static'});
+    modalRef.result.then((result: string) => {
+    }, (reject) => {
+      console.error(reject);
+    });
   }
 }
