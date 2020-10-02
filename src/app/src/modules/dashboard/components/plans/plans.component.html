@@ -1,6 +1,6 @@
-<form [formGroup]="plansForm">
+<!-- <form [formGroup]="plansForm">
     <div class="form-group">
-        
+
         <label for="emplSelect">Сотрудник:</label>
         <select [formControl]="plansForm.controls['empl']" class="form-control" id="emplSelect">
           <option>Сотрудник 1</option>
@@ -133,5 +133,39 @@
                type="text" class="form-control" id="note"
                placeholder="text">
       </div>
+
+</form> -->
+
+<form [formGroup]="plansForm">
+
+    <ul>
+      <li class="var_nav">
+        <div class="link_bg"></div>
+        <div class="link_title">
+          <a href="#"><span>Дежурный ПО и БД</span></a>
+        </div>
+      </li>
+
+      <li class="var_nav">
+        <div class="link_bg"></div>
+        <div class="link_title">
+          <a href="#"><span>Тестировщик-автоматизатор</span></a>
+        </div>
+      </li>
+
+      <li class="var_nav">
+        <div class="link_bg"></div>
+        <div class="link_title">
+          <a href="#"><span>Технический эксперт</span></a>
+        </div>
+      </li>
+
+      <li class="var_nav">
+        <div class="link_bg"></div>
+        <div class="link_title">
+          <a href="#"><span>Создать новый шаблон</span></a>
+        </div>
+      </li>
+    </ul>
 
 </form>
