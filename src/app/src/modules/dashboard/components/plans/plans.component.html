@@ -138,34 +138,38 @@
 
 <form [formGroup]="plansForm">
 
-    <ul>
-      <li class="var_nav">
-        <div class="link_bg"></div>
-        <div class="link_title">
-          <a [routerLink]="plansForm" (click)="softAndDB()"><span>Дежурный ПО и БД</span></a>
-        </div>
-      </li>
+  <ul>
+    <li class="var_nav">
+      <div class="link_bg"></div>
+      <div class="link_title">
+        <!--
+        Используй тег <a> только когда тебе нужна ссылка.
+        Здесь всплывает модальное окно, так что ссылка не нужна
+         -->
+        <div class="plans-nav" (click)="softAndDB()"><span>Дежурный ПО и БД</span></div>
+      </div>
+    </li>
 
-      <li class="var_nav">
-        <div class="link_bg"></div>
-        <div class="link_title">
-          <a href="#"><span>Тестировщик-автоматизатор</span></a>
-        </div>
-      </li>
+    <li class="var_nav">
+      <div class="link_bg"></div>
+      <div class="link_title">
+        <div class="plans-nav" (click)="softAndDB()"><span>Тестировщик-автоматизатор</span></div>
+      </div>
+    </li>
 
-      <li class="var_nav">
-        <div class="link_bg"></div>
-        <div class="link_title">
-          <a href="#"><span>Технический эксперт</span></a>
-        </div>
-      </li>
+    <li class="var_nav">
+      <div class="link_bg"></div>
+      <div class="link_title">
+        <div class="plans-nav" (click)="softAndDB()"><span>Технический эксперт</span></div>
+      </div>
+    </li>
 
-      <li class="var_nav">
-        <div class="link_bg"></div>
-        <div class="link_title">
-          <a href="#"><span>Создать новый шаблон</span></a>
-        </div>
-      </li>
-    </ul>
+    <li class="var_nav">
+      <div class="link_bg"></div>
+      <div class="link_title">
+        <div class="plans-nav" (click)="softAndDB()"><span>Создать новый шаблон</span></div>
+      </div>
+    </li>
+  </ul>
 
 </form>
