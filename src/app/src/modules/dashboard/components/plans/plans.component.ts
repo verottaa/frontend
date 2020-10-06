@@ -7,7 +7,6 @@ import {Component, OnInit} from '@angular/core';
 })
 export class PlansComponent implements OnInit {
 
-  const;
   fakeData: Plan[] = [
     {id: '123165469', title: 'Дежурный ПО и БД'},
     {id: '163721846', title: 'Тестировщик-автоматизатор'},
