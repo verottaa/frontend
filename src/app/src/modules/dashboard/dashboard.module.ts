@@ -8,7 +8,8 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {PlansComponent} from './components/plans/plans.component';
 import {CreateEmployeeComponent} from './components/employeeres/create-employee/create-employee.component';
-import { EmployersComponent } from './components/employeeres/employeeres/employers.component';
+import {EmployersComponent} from './components/employeeres/employeeres/employers.component';
+import {PlansConstructorComponent} from './components/plans/plans-constructor/plans-constructor.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { EmployersComponent } from './components/employeeres/employeeres/employe
     CreateEmployeeComponent,
     PlansComponent,
     EmployersComponent,
+    PlansConstructorComponent,
   ],
   imports: [
     CommonModule,
