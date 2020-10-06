@@ -7,7 +7,8 @@ import {PlansConstructorComponent} from './components/plans/plans-constructor/pl
 const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: `/dashboard/${DashboardType.EMPLOYERS}`},
   {path: ':type', component: DashboardComponent},
-  {path: 'plans/plans-constructor', component: PlansConstructorComponent},
+  {path: 'plans/constructor', component: PlansConstructorComponent},
+  {path: 'plans/constructor/:id', component: PlansConstructorComponent},
 ];
 
 @NgModule({
