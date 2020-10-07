@@ -1,0 +1,12 @@
+<div class="wrapper">
+  <div class="card">
+    <h3>{{step.task}}</h3>
+    <p>Форма обучения: {{step.formLearn}}</p>
+    <p>Период исполнения: {{step.doPeriod}}</p>
+    <p>Даты проведения: </p>
+    <p>С {{step.dateStart | date: 'dd.MM.yyyy'}} по {{step.dateEnd | date: 'dd.MM.yyyy'}}</p>
+    <p>Куратор: {{step.mentor}}</p>
+    <p>Материалы: {{step.materials}}</p>
+  </div>
+</div>
+

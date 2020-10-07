@@ -1,67 +1,18 @@
-<div class="accordion" id="accordionExample">
+<form>
+  <div class="row">
 
-  <div class="card">
-    <div class="card-header" id="headingTwo">
-      <h2 class="mb-0">
-        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
-                data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-          Пункт 1
-        </button>
-      </h2>
+    <div class="col">
+      <app-control-panel
+        (onAdd)="updateTemplate($event)"
+      ></app-control-panel>
     </div>
 
-    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-      <div class="card-body">
-
-        <div class="form-group">
-          <label for="projectID">Проект/задание</label>
-          <input type="text" class="form-control" id="projectID" placeholder="Example input">
-        </div>
-
-        <div class="form-group">
-          <label for="formLearnID">Форма обучения</label>
-          <input type="text" class="form-control" id="formLearnID" placeholder="Example input">
-        </div>
-
-        <div class="form-group">
-          <label for="periodLearnID">Период исполнения</label>
-          <input type="text" class="form-control" id="periodLearnID" placeholder="Example input">
-        </div>
-
-        <!-- Даты проведения -->
-
-        <div class="form-group">
-          <label>Даты проведения</label>
-          <div class="row">
-            <div class="col">
-              <input type="date" class="form-control">
-            </div>
-            <div class="col">
-              <input type="date" class="form-control">
-            </div>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Куратор</label>
-          <select class="custom-select" id="inlineFormCustomSelectPref">
-            <option selected>Open this select menu</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label for="exampleFormControlTextarea1">Материалы</label>
-          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-        </div>
-
-        <button type="button" class="btn btn-outline-success">Добавить</button>
-
-      </div>
+    <div class="col">
+      <app-step
+        *ngFor="let s of steps"
+        [step]="s"
+      ></app-step>
     </div>
 
   </div>
-
-</div>
+</form>

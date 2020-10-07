@@ -1,0 +1,81 @@
+<div class="wrapper">
+
+  <div class="form-group">
+    <label for="task">Проект/задание</label>
+    <input
+      type="text"
+      class="form-control"
+      id="task"
+      placeholder="Введите название: "
+      [(ngModel)]="task"
+    >
+  </div>
+
+  <div class="form-group">
+    <label for="formLearnID">Форма обучения</label>
+    <input
+      type="text"
+      class="form-control"
+      id="formLearnID"
+      placeholder="Введите форму обучения: "
+      [(ngModel)]="formLearn"
+    >
+  </div>
+
+  <div class="form-group">
+    <label for="periodLearnID">Период исполнения</label>
+    <input
+      type="text"
+      class="form-control"
+      id="periodLearnID"
+      placeholder="Введите период исполнения: "
+      [(ngModel)]="doPeriod"
+    >
+  </div>
+
+  <div class="form-group">
+    <label>Даты проведения</label>
+    <div class="row">
+      <div class="col">
+        <input
+          type="date"
+          class="form-control"
+          [(ngModel)]="dateStart"
+        >
+      </div>
+      <div class="col">
+        <input
+          type="date"
+          class="form-control"
+          [(ngModel)]="dateEnd"
+        >
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Куратор</label>
+    <select
+      class="custom-select"
+      id="inlineFormCustomSelectPref"
+      [(ngModel)]="mentor"
+    >
+      <option>Нижний Новгород</option>
+      <option>Москва</option>
+      <option>Санкт-Петербург</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Материалы</label>
+    <textarea
+      class="form-control"
+      id="exampleFormControlTextarea1"
+      rows="3"
+      [(ngModel)]="materials"
+    ></textarea>
+  </div>
+
+  <button type="button" class="btn btn-outline-primary" (click)="addStep()">Добавить</button>
+  <button type="button" class="btn btn-outline-secondary">Назад</button>
+</div>
