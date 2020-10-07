@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
 import {Template} from '../plans-constructor.component';
 
 @Component({
@@ -9,10 +9,16 @@ import {Template} from '../plans-constructor.component';
 export class StepComponent implements OnInit {
 
   @Input() step: Template;
+  @Output() onRemove = new EventEmitter<number>();
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
+  }
+
+  removeStep() {
+    this.onRemove.emit(this.step.id);
   }
 
 }

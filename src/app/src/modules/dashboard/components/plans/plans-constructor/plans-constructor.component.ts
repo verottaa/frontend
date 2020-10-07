@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 
 export interface Template {
+  id?: number;
   task: string;
   formLearn: string;
   doPeriod: string;
@@ -18,8 +19,7 @@ export interface Template {
 
 export class PlansConstructorComponent implements OnInit {
 
-  steps: Template[] = [
-  ];
+  steps: Template[] = [];
 
   constructor() {
   }
@@ -29,6 +29,11 @@ export class PlansConstructorComponent implements OnInit {
 
   updateTemplate(step: Template) {
     this.steps.push(step);
+  }
+
+  removeStep(id: number) {
+    console.log('id to remove: ', id);
+    this.steps = this.steps.filter(p => p.id !== id);
   }
 
 }

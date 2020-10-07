@@ -9,8 +9,9 @@
 
     <div class="col">
       <app-step
-        *ngFor="let s of steps"
+        *ngFor="let s of steps; let idx = index"
         [step]="s"
+        (onRemove)="removeStep($event)"
       ></app-step>
     </div>
 

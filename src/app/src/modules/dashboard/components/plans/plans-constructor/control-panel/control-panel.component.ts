@@ -17,6 +17,7 @@ export class ControlPanelComponent implements OnInit {
   dateEnd = '';
   mentor = '';
   materials = '';
+  id: number = 1;
 
   constructor() { }
 
@@ -26,6 +27,7 @@ export class ControlPanelComponent implements OnInit {
 
   addStep(): void{
     const step: Template = {
+      id: this.id,
       task: this.task,
       formLearn: this.formLearn,
       doPeriod: this.doPeriod,
