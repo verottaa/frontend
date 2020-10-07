@@ -15,7 +15,7 @@ export class UsersService {
   /**
    * Адрес для запросов
    */
-  baseUrl = environment.host + environment.port + environment.apiRoute + `users/`;
+  baseUrl = environment.host + environment.apiRoute + `users/`;
 
   constructor(private http: HttpClient) {
   }
