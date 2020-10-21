@@ -3,14 +3,14 @@ export class User {
   branch: string;
   dateOfStart: string;
   department: string;
-  firstName: string;
-  lastName: string;
+  name: string;
+  surname: string;
   patronymic: string;
 }
 
 export class CreateUserDto {
-  firstName: string;
-  lastName: string;
+  name: string;
+  surname: string;
   patronymic: string;
   dateOfStart: string;
   branch: string;
