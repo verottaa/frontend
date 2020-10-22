@@ -36,8 +36,8 @@ export class CreateEmployeeComponent implements OnInit {
 
   onSubmit(): void {
     const user = new CreateUserDto();
-    user.firstName = this.form.controls.surname.value;
-    user.surname = this.form.controls.name.value;
+    user.name = this.form.controls.name.value;
+    user.surname = this.form.controls.surname.value;
     user.patronymic = this.form.controls.patronymic.value;
     user.dateOfStart = this.form.controls.dateOfStart.value;
     user.branch = this.form.controls.branch.value;

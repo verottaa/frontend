@@ -1,4 +1,4 @@
-<div class="employeeres-wrapper">
+<!--<div class="employeeres-wrapper">
   <div class="pre-table">
     <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
       <div class="input-group input-group mr-3">
@@ -51,5 +51,116 @@
       </tr>
       </tbody>
     </table>
+  </div>
+</div>-->
+
+<div class="card shadow">
+  <div class="card-body" style="font-size: 12px;">
+    <div class="row">
+      <div class="col-md-6 text-nowrap">
+        <div id="dataTable_length" class="dataTables_length" aria-controls="dataTable"><label class="d-xl-flex align-items-xl-center">Показать <select class="form-control form-control-sm custom-select custom-select-sm" style="font-size: 12px;width: 115px;margin-left: 8px;"><option value="10" selected>10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select></label></div>
+      </div>
+      <div class="col-md-6 col-xl-6 offset-xl-0 text-right d-xl-flex justify-content-xl-end" style="width: 473px;">
+        <div class="text-right text-md-right d-inline-flex dataTables_filter" id="dataTable_filter"><input type="search" class="d-xl-flex justify-content-xl-start align-items-xl-center form-control form-control-sm" aria-controls="dataTable" placeholder="Search" style="width: 348px;height: 31px;margin: 0px;padding: 15px;margin-right: -2px;font-size: 12px;"
+        /><button (click)="addEmployee()" class="btn btn-primary d-inline-flex d-print-inline-flex d-sm-inline-flex d-md-inline-flex d-lg-inline-flex d-xl-flex justify-content-between justify-content-xl-center align-items-xl-center" type="button" style="height: 31px;line-height: 0px;font-size: 12px;text-align: center;width: 190px;margin: 0px;padding: 0px;margin-right: 0px;margin-left: 16px;">Добавить сотрудника</button><label></label></div>
+      </div>
+    </div>
+    <div class="table-responsive text-center table mt-2" role="grid" aria-describedby="dataTable_info">
+      <table class="table my-0" id="dataTable">
+        <thead>
+        <tr>
+          <th>Фамилия</th>
+          <th>Имя</th>
+          <th>Отчество</th>
+          <th style="width: 233px;">Должность</th>
+          <th>План обучения</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>Иванов</td>
+          <td>Иван</td>
+          <td>Иванович</td>
+          <td style="width: 233px;">Ведущий специалист</td>
+          <td class="d-xl-flex justify-content-xl-center" style="text-align: center;"><button class="btn btn-dark text-center d-xl-flex justify-content-xl-center align-items-xl-center" type="button" style="width: 176px;height: 25px;font-size: 12px;text-align: center;line-height: 0px;">Назначить</button></td>
+        </tr>
+        <tr>
+          <td>Иванов<br /></td>
+          <td>Иван<br /></td>
+          <td>Иванович<br /></td>
+          <td style="width: 233px;">Начальник отдела</td>
+          <td class="d-xl-flex justify-content-xl-center">
+            <div class="row no-gutters align-items-center" style="width: 200px;">
+              <div class="col-auto">
+                <div class="text-dark font-weight-bold h5 mb-0 mr-3"><span style="font-size: 12px;">79%</span></div>
+              </div>
+              <div class="col" style="width: 150px;">
+                <div class="progress progress-sm" style="width: 120px;">
+                  <div class="progress-bar bg-info" aria-valuenow="79" aria-valuemin="0" aria-valuemax="100" style="width: 79%;"><span class="sr-only">79%</span></div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Иванов<br /></td>
+          <td>Иван<br /></td>
+          <td>Иванович<br /></td>
+          <td style="width: 233px;">Главный специалист</td>
+          <td class="d-xl-flex justify-content-xl-center">
+            <div class="row no-gutters align-items-center" style="width: 200px;">
+              <div class="col-auto">
+                <div class="text-dark font-weight-bold h5 mb-0 mr-3"><span style="font-size: 12px;">2%</span></div>
+              </div>
+              <div class="col" style="width: 120px;">
+                <div class="progress progress-sm" style="width: 120px;">
+                  <div class="progress-bar bg-info" aria-valuenow="2" aria-valuemin="0" aria-valuemax="100" style="width: 2%;"><span class="sr-only">2%</span></div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Иванов<br /></td>
+          <td>Иван<br /></td>
+          <td>Иванович<br /></td>
+          <td style="width: 233px;">Консультант</td>
+          <td><label class="text-success"><strong>Обучение завершено</strong></label></td>
+        </tr>
+        <tr>
+          <td>Иванов<br /></td>
+          <td>Иван<br /></td>
+          <td>Иванович<br /></td>
+          <td style="width: 233px;">Ведущий специалист</td>
+          <td><label class="text-warning"><strong>Обучение приостановлено</strong></label></td>
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr>
+          <td><strong>Фамилия</strong><br /></td>
+          <td><strong>Имя</strong></td>
+          <td><strong>Отчество</strong></td>
+          <td style="width: 233px;"><strong>Должность</strong></td>
+          <td><strong>План обучения</strong></td>
+        </tr>
+        </tfoot>
+      </table>
+    </div>
+    <div class="row">
+      <div class="col-md-6 align-self-center">
+        <p id="dataTable_info" class="dataTables_info" role="status" aria-live="polite">Записей с 1 по 10 из 27</p>
+      </div>
+      <div class="col-md-6">
+        <nav class="d-lg-flex justify-content-lg-end dataTables_paginate paging_simple_numbers">
+          <ul class="pagination">
+            <li class="page-item disabled"><a class="page-link" href="#" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
+            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#" aria-label="Next"><span aria-hidden="true">»</span></a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
   </div>
 </div>
