@@ -3,6 +3,7 @@ import {NgModule} from '@angular/core';
 import {DashboardComponent} from './components/dashboard/dashboard.component';
 import {DashboardType} from '../../models/dashboard';
 import {PlansConstructorComponent} from './components/plans/plans-constructor/plans-constructor.component';
+import {UserProfileComponent} from "./components/user-profile/user-profile.component";
 
 const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: `/dashboard/${DashboardType.EMPLOYERS}`},

@@ -1,19 +1,17 @@
-<div>
-  <ul>
-    <li class="var_nav" *ngFor="let item of fakeData">
-      <div class="link_bg"></div>
-      <div class="link_title">
-        <a [routerLink]="'/dashboard/plans/constructor/' + item.id" class="plans-nav"><span>{{item.title}}</span></a>
-      </div>
-    </li>
-
-    <li class="var_nav">
-      <div class="link_bg"></div>
-      <div class="link_title">
-        <a [routerLink]="'/dashboard/plans/constructor'" class="plans-nav"><span>Создать новый шаблон</span></a>
-      </div>
-    </li>
-  </ul>
+<div class="card text-left shadow mb-4">
+  <div class="card-header text-left py-3"><a class="btn btn-light btn-icon-split" role="button"><span class="text-dark text"><strong>Дежурный ПО и БД</strong></span><span class="text-black-50 icon"><i class="fas fa-arrow-right"></i></span></a>
+    <h6 class="text-primary m-0 font-weight-bold"></h6>
+  </div>
+  <div class="card-header text-left py-3">
+    <h6 class="text-primary m-0 font-weight-bold"><a class="btn btn-light btn-icon-split" role="button"><span class="text-dark text"><strong>Технолог</strong></span><span class="text-black-50 icon"><i class="fas fa-arrow-right"></i></span></a></h6>
+  </div>
+  <div class="card-header text-left py-3"><a class="btn btn-light btn-icon-split" role="button"><span class="text-dark text"><strong>Технический эксперт</strong><br /></span><span class="text-black-50 icon"><i class="fas fa-arrow-right"></i></span></a>
+    <h6 class="text-primary m-0 font-weight-bold"></h6>
+  </div>
+  <div class="card-header text-left py-3"><a class="btn btn-light btn-icon-split" role="button"><span class="text-dark text"><strong>Тестировщик-автоматизатор</strong><br /></span><span class="text-black-50 icon"><i class="fas fa-arrow-right"></i></span></a>
+    <h6 class="text-primary m-0 font-weight-bold"></h6>
+  </div>
+  <div class="card-header text-left py-3"><a [routerLink]="'/dashboard/plans/constructor'" class="btn btn-light btn-icon-split" role="button"><span class="text-dark text"><strong>Создать шаблон</strong></span><span class="text-black-50 icon"><i class="fas fa-arrow-right"></i></span></a>
+    <h6 class="text-primary m-0 font-weight-bold"></h6>
+  </div>
 </div>
-
-

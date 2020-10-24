@@ -5,4 +5,6 @@ export enum DashboardType {
   BILLS = 'bills',
   APPRAISAL = 'appraisal',
   REPORTS = 'reports',
+  USER = 'user-profile',
+  ADMIN = 'admin-profile',
 }
