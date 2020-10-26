@@ -24,6 +24,9 @@
         <ng-container *ngIf="currentDashboard === dashboardType.ADMIN">
           <app-admin-profile></app-admin-profile>
         </ng-container>
+        <ng-container *ngIf="currentDashboard === dashboardType.USER">
+          <app-user-profile></app-user-profile>
+        </ng-container>
       </div>
     </main>
   </div>

@@ -10,6 +10,7 @@ const routes: Routes = [
   {path: ':type', component: DashboardComponent},
   {path: 'plans/constructor', component: PlansConstructorComponent},
   {path: 'plans/constructor/:id', component: PlansConstructorComponent},
+  {path: 'user-profile', component: UserProfileComponent},
 ];
 
 @NgModule({
