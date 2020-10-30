@@ -14,6 +14,7 @@ import {StepComponent} from './components/plans/plans-constructor/step/step.comp
 import {ControlPanelComponent} from './components/plans/plans-constructor/control-panel/control-panel.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { AdminProfileComponent } from './components/admin-profile/admin-profile.component';
+import { AppointmentComponent } from './components/employeeres/appointment/appointment.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { AdminProfileComponent } from './components/admin-profile/admin-profile.
     ControlPanelComponent,
     UserProfileComponent,
     AdminProfileComponent,
+    AppointmentComponent,
   ],
   imports: [
     CommonModule,

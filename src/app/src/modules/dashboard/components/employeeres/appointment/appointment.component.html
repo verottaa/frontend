@@ -1,0 +1,8 @@
+<form [formGroup]="form" class="popup">
+  <button type="button" class="popup_close" (click)="CloseModal()">&times;</button>
+  <div class="card-body">
+    <h4 style="height: 45px;" class="card-title">План обучения для сотрудника</h4>
+      <h6 class="text-muted card-subtitle mb-2">Выберите план:<select style="margin-left: 15px;width: 216px;"><option value="12" selected>Дежурный ПО и БД</option><option value="13">Тех. эксперт</option><option value="14">Технолог</option></select></h6>
+      <h6
+        class="text-muted card-subtitle mb-2" style="margin-top: 2px;">Дата начала обучения:<input type="date" style="margin-left: 15px;width: 163px;" /></h6><button style="margin-top: 10px" type="button" class="btn btn-outline-success">Назначить</button></div>
+</form>

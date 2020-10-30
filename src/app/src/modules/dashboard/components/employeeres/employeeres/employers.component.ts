@@ -6,6 +6,7 @@ import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {CreateEmployeeComponent} from '../create-employee/create-employee.component';
 import {takeUntil} from 'rxjs/operators';
 import {ConfirmModalComponent} from '../../../../../components/shared-components/modals/confirm-modal/confirm-modal.component';
+import {AppointmentComponent} from '../appointment/appointment.component';
 
 @Component({
   selector: 'app-employers',
@@ -33,6 +34,14 @@ export class EmployersComponent implements OnInit, OnDestroy {
 
   addEmployee(): void {
     const modalRef = this.modalService.open(CreateEmployeeComponent, {centered: true, backdrop: 'static'});
+    modalRef.result.then((result: string) => {
+    }, (reject) => {
+      console.error(reject);
+    });
+  }
+
+  appointPlan(): void {
+    const modalRef = this.modalService.open(AppointmentComponent, {centered: true, backdrop: 'static'});
     modalRef.result.then((result: string) => {
     }, (reject) => {
       console.error(reject);
