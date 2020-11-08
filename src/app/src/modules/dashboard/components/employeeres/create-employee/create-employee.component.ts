@@ -4,6 +4,7 @@ import {NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
 import {CreateUserDto, User} from '../../../../../models/user';
 import {UsersService} from '../../../../../services/users/users.service';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {AlertService} from '../../../../../services/alert/alert.service';
 
 @Component({
   selector: 'app-create-employee',
@@ -18,6 +19,7 @@ export class CreateEmployeeComponent implements OnInit {
 
   constructor(private fb: FormBuilder,
               private usersService: UsersService,
+              private alertService: AlertService,
               private modalService: NgbModal) {
     this.form = fb.group({
       surname: fb.control('', [Validators.required]),
@@ -30,9 +32,7 @@ export class CreateEmployeeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
   }
-
 
   onSubmit(): void {
     const user = new CreateUserDto();
@@ -42,7 +42,9 @@ export class CreateEmployeeComponent implements OnInit {
     user.dateOfStart = this.form.controls.dateOfStart.value;
     user.branch = this.form.controls.branch.value;
     user.department = this.form.controls.department.value;
-    this.usersService.createUser(user).subscribe(id => {
+    this.usersService.createUser(user).subscribe({
+      next: id => this.alertService.createSuccessAlert('Сотрудник успешно создан'),
+      error: err => this.alertService.createErrorAlert('Не удалось создать сотрудника')
     });
   }
 

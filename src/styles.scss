@@ -8,9 +8,17 @@ body {
   padding: 0;
   height: 100%;
   width: 100%;
-  //font-size: .875rem;
 }
 
 button:focus.close {
   outline: none;
+}
+
+.alerts-list {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 300px;
+  background-color: transparent;
+  z-index: 1500;
 }

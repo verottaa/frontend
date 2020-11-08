@@ -13,12 +13,16 @@ import {ConfirmModalComponent} from './src/components/shared-components/modals/c
 import {ComponentModalComponent} from './src/components/shared-components/modals/component-modal/component-modal.component';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {AuthInterceptor} from './src/interceptors/auth-interceptor.service';
+import { AlertComponent } from './src/components/shared-components/alert/alert.component';
+import { AlertsListComponent } from './src/components/shared-components/alerts-list/alerts-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ConfirmModalComponent,
     ComponentModalComponent,
+    AlertComponent,
+    AlertsListComponent,
   ],
   imports: [
     HttpClientModule,

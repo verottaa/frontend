@@ -3,6 +3,7 @@ import {environment} from '../../../../environments/environment';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {CreateUserDto, User, UserCreatedId} from '../../models/user';
+import {AssignmentToCreate} from '../../models/assignment';
 
 @Injectable({
   providedIn: 'root'
@@ -63,4 +64,7 @@ export class UsersService {
     return this.http.delete(this.baseUrl + userId);
   }
 
+  public assignToUser(user: User, assignment: AssignmentToCreate): Observable<any> {
+    return this.http.post(`${this.baseUrl}/${user.id}/assign`, assignment);
+  }
 }

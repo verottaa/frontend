@@ -15,14 +15,24 @@ import {AppointmentComponent} from '../appointment/appointment.component';
 })
 export class EmployersComponent implements OnInit, OnDestroy {
 
-  employers: User[] = [];
+  fakeData: User[] = User.generateFakeList(
+    'Иванов',
+    'Иван',
+    'Иванович',
+    'Ведущий разработчик',
+    10);
   destroy$ = new Subject();
+
+  users: User[] = [];
 
   constructor(private usersService: UsersService,
               private modalService: NgbModal) {
     this.usersService.getUsers()
       .pipe(takeUntil(this.destroy$))
-      .subscribe(users => this.employers = null ? [] : users);
+      .subscribe({
+        next: users => this.users = users,
+        error: () => this.users = this.fakeData,
+      });
   }
 
   ngOnInit(): void {
@@ -34,17 +44,16 @@ export class EmployersComponent implements OnInit, OnDestroy {
 
   addEmployee(): void {
     const modalRef = this.modalService.open(CreateEmployeeComponent, {centered: true, backdrop: 'static'});
-    modalRef.result.then((result: string) => {
+    modalRef.result.then(() => {
     }, (reject) => {
       console.error(reject);
     });
   }
 
-  appointPlan(): void {
+  appointPlan(user: User): void {
     const modalRef = this.modalService.open(AppointmentComponent, {centered: true, backdrop: 'static'});
-    modalRef.result.then((result: string) => {
-    }, (reject) => {
-      console.error(reject);
+    modalRef.componentInstance.assignedToUser = user;
+    modalRef.result.then((_) => {
     });
   }
 
