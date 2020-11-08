@@ -8,7 +8,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {PlansComponent} from './components/plans/plans.component';
 import {CreateEmployeeComponent} from './components/employeeres/create-employee/create-employee.component';
-import {EmployersComponent} from './components/employeeres/employeeres/employers.component';
+import {EmployersComponent} from './components/employeeres/employers/employers.component';
 import {PlansConstructorComponent} from './components/plans/plans-constructor/plans-constructor.component';
 import {StepComponent} from './components/plans/plans-constructor/step/step.component';
 import {ControlPanelComponent} from './components/plans/plans-constructor/control-panel/control-panel.component';
