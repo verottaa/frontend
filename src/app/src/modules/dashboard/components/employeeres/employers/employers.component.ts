@@ -4,9 +4,10 @@ import {UsersService} from '../../../../../services/users/users.service';
 import {Subject} from 'rxjs';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {CreateEmployeeComponent} from '../create-employee/create-employee.component';
-import {takeUntil} from 'rxjs/operators';
+import {finalize, take, takeUntil} from 'rxjs/operators';
 import {ConfirmModalComponent} from '../../../../../components/shared-components/modals/confirm-modal/confirm-modal.component';
 import {AppointmentComponent} from '../appointment/appointment.component';
+import {AlertService} from '../../../../../services/alert/alert.service';
 
 @Component({
   selector: 'app-employers',
@@ -22,20 +23,30 @@ export class EmployersComponent implements OnInit, OnDestroy {
     'Ведущий разработчик',
     10);
   destroy$ = new Subject();
+  showPreloader = false;
 
   users: User[] = [];
 
   constructor(private usersService: UsersService,
-              private modalService: NgbModal) {
+              private modalService: NgbModal,
+              private alertService: AlertService) {
+  }
+
+  ngOnInit(): void {
+    this.loadUsers();
+  }
+
+  loadUsers(): void {
+    this.showPreloader = true;
     this.usersService.getUsers()
-      .pipe(takeUntil(this.destroy$))
+      .pipe(
+        take(1),
+        finalize(() => this.showPreloader = false),
+      )
       .subscribe({
         next: users => this.users = users,
         error: () => this.users = this.fakeData,
       });
-  }
-
-  ngOnInit(): void {
   }
 
   ngOnDestroy(): void {
@@ -45,8 +56,9 @@ export class EmployersComponent implements OnInit, OnDestroy {
   addEmployee(): void {
     const modalRef = this.modalService.open(CreateEmployeeComponent, {centered: true, backdrop: 'static'});
     modalRef.result.then(() => {
-    }, (reject) => {
-      console.error(reject);
+      this.loadUsers();
+    }, (error) => {
+      this.createErrorAlertAndWriteErrorOnConsole(error);
     });
   }
 
@@ -54,7 +66,15 @@ export class EmployersComponent implements OnInit, OnDestroy {
     const modalRef = this.modalService.open(AppointmentComponent, {centered: true, backdrop: 'static'});
     modalRef.componentInstance.assignedToUser = user;
     modalRef.result.then((_) => {
+      this.loadUsers();
+    }, (error) => {
+      this.createErrorAlertAndWriteErrorOnConsole(error);
     });
+  }
+
+  createErrorAlertAndWriteErrorOnConsole(error): void {
+    this.alertService.createErrorAlert(error);
+    console.error(error);
   }
 
   deleteEmployee(id: string): void {
@@ -63,9 +83,21 @@ export class EmployersComponent implements OnInit, OnDestroy {
     modalRef.result.then((result: string) => {
       if (result) {
         this.usersService.deleteUser(id).subscribe();
+        this.deleteEmployeeAndReloadList(id);
       }
     }, (reject) => {
       console.error(reject);
+    });
+  }
+
+  private deleteEmployeeAndReloadList(id: string): void {
+    this.usersService.deleteUser(id).subscribe({
+      next: (_) => {
+        this.loadUsers();
+      },
+      error: (err) => {
+        this.createErrorAlertAndWriteErrorOnConsole(err);
+      }
     });
   }
 }

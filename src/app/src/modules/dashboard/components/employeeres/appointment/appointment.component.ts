@@ -41,7 +41,7 @@ export class AppointmentComponent implements OnInit {
         this.alertService.createErrorAlert('Не удалось назначить план обучения');
       }
     });
-  };
+  }
 
   closeModal(): void {
     this.activeModal.close();
