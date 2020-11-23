@@ -1,5 +1,5 @@
 <form [formGroup]="form" class="popup" (submit)="onSubmit()">
-  <button type="button" class="popup_close" (click)="CloseModal()">&times;</button>
+  <button type="button" class="popup_close" (click)="closeModal()">&times;</button>
   <div class="form-group">
     <label for="surname">Фамилия</label>
     <input [formControl]="form.controls['surname']"

@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
+import {NgbActiveModal, NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
 import {CreateUserDto, User} from '../../../../../models/user';
 import {UsersService} from '../../../../../services/users/users.service';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
@@ -11,7 +11,6 @@ import {AlertService} from '../../../../../services/alert/alert.service';
   templateUrl: './create-employee.component.html',
   styleUrls: ['./create-employee.component.scss']
 })
-
 export class CreateEmployeeComponent implements OnInit {
 
   dateTime: NgbDateStruct;
@@ -20,7 +19,7 @@ export class CreateEmployeeComponent implements OnInit {
   constructor(private fb: FormBuilder,
               private usersService: UsersService,
               private alertService: AlertService,
-              private modalService: NgbModal) {
+              public activeModal: NgbActiveModal) {
     this.form = fb.group({
       surname: fb.control('', [Validators.required]),
       name: fb.control('', [Validators.required]),
@@ -45,12 +44,25 @@ export class CreateEmployeeComponent implements OnInit {
     user.branch = this.form.controls.branch.value;
     user.department = this.form.controls.department.value;
     this.usersService.createUser(user).subscribe({
-      next: id => this.alertService.createSuccessAlert('Сотрудник успешно создан'),
-      error: err => this.alertService.createErrorAlert('Не удалось создать сотрудника')
+      next: (id) => {
+        this.showEmployeeCreatedSuccessfullyAlert();
+        this.closeModal();
+      },
+      error: (err) => {
+        this.showCantCreateEmployeeErrorAlert();
+      }
     });
   }
 
-  CloseModal(): void {
-    const modalRef = this.modalService.dismissAll(CreateEmployeeComponent);
+  showEmployeeCreatedSuccessfullyAlert(): void {
+    this.alertService.createSuccessAlert('Сотрудник успешно создан');
+  }
+
+  showCantCreateEmployeeErrorAlert(): void {
+    this.alertService.createErrorAlert('Не удалось создать сотрудника');
+  }
+
+  closeModal(): void {
+    this.activeModal.close();
   }
 }
