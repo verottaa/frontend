@@ -25,6 +25,7 @@ export class CreateEmployeeComponent implements OnInit {
       surname: fb.control('', [Validators.required]),
       name: fb.control('', [Validators.required]),
       patronymic: fb.control('', [Validators.required]),
+      position: fb.control('', [Validators.required]),
       dateOfStart: fb.control('', [Validators.required]),
       branch: fb.control('', [Validators.required]),
       department: fb.control('', [Validators.required]),
@@ -39,6 +40,7 @@ export class CreateEmployeeComponent implements OnInit {
     user.name = this.form.controls.name.value;
     user.surname = this.form.controls.surname.value;
     user.patronymic = this.form.controls.patronymic.value;
+    user.position = this.form.controls.position.value;
     user.dateOfStart = this.form.controls.dateOfStart.value;
     user.branch = this.form.controls.branch.value;
     user.department = this.form.controls.department.value;

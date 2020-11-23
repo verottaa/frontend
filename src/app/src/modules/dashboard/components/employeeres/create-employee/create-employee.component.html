@@ -1,14 +1,70 @@
-<form [formGroup]="form" class="popup">
+<form [formGroup]="form" class="popup" (submit)="onSubmit()">
   <button type="button" class="popup_close" (click)="CloseModal()">&times;</button>
-  <div class="form-group"><label for="name">Фамилия</label><input [formControl]="form.controls['surname']" type="text" class="form-control item" id="surname" /></div>
-  <div class="form-group"><label for="name">Имя</label><input [formControl]="form.controls['name']" type="text" class="form-control item" id="name" /></div>
-  <div class="form-group"><label for="patronymic">Отчество</label><input [formControl]="form.controls['patronymic']" type="text" class="form-control item" id="patronymic" /></div>
-  <div class="form-group"><label for="position">Должность</label><input type="text" class="form-control item" id="position" /></div>
-  <div class="form-group"><label for="datepicker">Дата приема на работу</label><input [formControl]="form.controls['dateOfStart']"  class="form-control" type="date" id="datepicker"/></div>
-  <div class="form-group"><label for="branchSelect">Филиал</label><select [formControl]="form.controls['branch']" class="form-control" id="branchSelect"><optgroup label="Выберите филиал:"><option value="12" selected>1</option><option value="13">2</option><option value="14">3</option></optgroup></select></div>
+  <div class="form-group">
+    <label for="surname">Фамилия</label>
+    <input [formControl]="form.controls['surname']"
+           type="text"
+           name="surname"
+           class="form-control item"
+           id="surname"/>
+  </div>
+  <div class="form-group">
+    <label for="name">Имя</label>
+    <input [formControl]="form.controls['name']"
+           type="text"
+           class="form-control item"
+           name="name"
+           id="name"/></div>
+  <div class="form-group">
+    <label for="patronymic">Отчество</label>
+    <input [formControl]="form.controls['patronymic']"
+           type="text"
+           class="form-control item"
+           name="patronymic"
+           id="patronymic"/></div>
+  <div class="form-group">
+    <label for="position">Должность</label>
+    <input [formControl]="form.controls['position']"
+           type="text"
+           class="form-control item"
+           name="position"
+           id="position"/></div>
+  <div class="form-group">
+    <label for="datepicker">Дата приема на работу</label>
+    <input [formControl]="form.controls['dateOfStart']"
+           class="form-control"
+           type="date"
+           name="datepicker"
+           id="datepicker"/></div>
+  <div class="form-group">
+    <label for="branchSelect">Филиал</label>
+    <select [formControl]="form.controls['branch']"
+            class="form-control"
+            name="branchSelect"
+            id="branchSelect">
+      <optgroup label="Выберите филиал:">
+        <option value="12" selected>1</option>
+        <option value="13">2</option>
+        <option value="14">3</option>
+      </optgroup>
+    </select>
+  </div>
   <div
-    class="form-group"><label for="departmentSelect">Отдел</label><select [formControl]="form.controls['department']" class="form-control" id="departmentSelect"><optgroup label="Выберите отдел:"><option value="12" selected>1</option><option value="13">2</option><option value="14">3</option></optgroup></select></div>
-  <div
-    class="form-group"><button class="btn btn-primary btn-block btn-lg" type="submit">Добавить</button></div>
+    class="form-group">
+    <label for="departmentSelect">Отдел</label>
+    <select [formControl]="form.controls['department']"
+            class="form-control"
+            name="departmentSelect"
+            id="departmentSelect">
+      <optgroup label="Выберите отдел:">
+        <option value="12" selected>1</option>
+        <option value="13">2</option>
+        <option value="14">3</option>
+      </optgroup>
+    </select>
+  </div>
+  <div class="form-group">
+    <button class="btn btn-primary btn-block btn-lg" type="submit">Добавить</button>
+  </div>
 </form>
 
