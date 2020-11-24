@@ -1,12 +1,12 @@
 <form [formGroup]="form" class="popup">
   <div class="card-body">
-    <h4 class="card-title">План обучения для сотрудника {{assignedToUser.getFullName()}}</h4>
+    <h4 class="card-title">План обучения для сотрудника {{getName()}}</h4>
     <h6 class="text-muted card-subtitle mb-2">Выберите план:
       <select style="margin-left: 15px;width: 216px;"
               [formControl]="form.controls['plan']" [(ngModel)]="assignment.plan" required>
-        <option value="12" selected>Дежурный ПО и БД</option>
-        <option value="13">Тех. эксперт</option>
-        <option value="14">Технолог</option>
+        <option *ngFor="let plan of plans; let i = index"
+                [selected]="i === 0"
+                [value]="plan.id">{{plan.id}}</option>
       </select></h6>
     <h6
       class="text-muted card-subtitle mb-2" style="margin-top: 2px;">Дата начала обучения:
