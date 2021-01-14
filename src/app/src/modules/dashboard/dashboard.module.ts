@@ -12,10 +12,10 @@ import {EmployersComponent} from './components/employeeres/employers/employers.c
 import {PlansConstructorComponent} from './components/plans/plans-constructor/plans-constructor.component';
 import {StepComponent} from './components/plans/plans-constructor/step/step.component';
 import {ControlPanelComponent} from './components/plans/plans-constructor/control-panel/control-panel.component';
-import { UserProfileComponent } from './components/user-profile/user-profile.component';
-import { AdminProfileComponent } from './components/admin-profile/admin-profile.component';
-import { AppointmentComponent } from './components/employeeres/appointment/appointment.component';
-import { BillsComponent } from './components/bills/bills.component';
+import {UserProfileComponent} from './components/user-profile/user-profile.component';
+import {AdminProfileComponent} from './components/admin-profile/admin-profile.component';
+import {AppointmentComponent} from './components/employeeres/appointment/appointment.component';
+import {BillsComponent} from './components/bills/bills.component';
 
 
 @NgModule({
@@ -39,7 +39,7 @@ import { BillsComponent } from './components/bills/bills.component';
     DashboardRoutingModule,
     ReactiveFormsModule,
     NgbModule,
-    FormsModule
+    FormsModule,
   ],
   exports: [
     DashboardComponent

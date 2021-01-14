@@ -3,7 +3,7 @@ import {environment} from '../../../../environments/environment';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {CreateUserDto, User, UserCreatedId} from '../../models/user';
-import {AssignmentToCreate} from '../../models/assignment';
+import {AssignToCreate} from '../../models/assignment';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +16,7 @@ export class UsersService {
   /**
    * Адрес для запросов
    */
-  baseUrl = environment.host + environment.apiRoute + `users/`;
+  readonly baseUrl = environment.host + environment.apiRoute + `users/`;
 
   constructor(private http: HttpClient) {
   }
@@ -62,9 +62,5 @@ export class UsersService {
    */
   public deleteUser(userId: string): Observable<any> {
     return this.http.delete(this.baseUrl + userId);
-  }
-
-  public assignToUser(user: User, assignment: AssignmentToCreate): Observable<any> {
-    return this.http.post(`${this.baseUrl}/${user.id}/assign`, assignment);
   }
 }

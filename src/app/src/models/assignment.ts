@@ -1,4 +1,5 @@
-export class AssignmentToCreate {
-  plan: string;
-  date: string;
+export class AssignToCreate {
+  planId: string;
+  userId: string;
+  startDate: string;
 }
