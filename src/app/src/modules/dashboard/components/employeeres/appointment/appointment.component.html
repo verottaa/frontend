@@ -1,9 +1,10 @@
 <form [formGroup]="form" class="popup">
   <div class="card-body">
-    <h4 class="card-title">План обучения для сотрудника {{assignedToUser.surname}} {{assignedToUser.name}} {{assignedToUser.patronymic}}</h4>
+    <h4 class="card-title">План обучения для
+      сотрудника {{assignedToUser.surname}} {{assignedToUser.name}} {{assignedToUser.patronymic}}</h4>
     <h6 class="text-muted card-subtitle mb-2">Выберите план:
       <select style="margin-left: 15px;width: 216px;"
-              [formControl]="form.controls['plan']" [(ngModel)]="assignment.plan" required>
+              [formControl]="form.controls['plan']" [(ngModel)]="assignment.planId" required>
         <option *ngFor="let plan of plans; let i = index"
                 [selected]="i === 0"
                 [value]="plan.id">{{plan.id}}</option>
@@ -11,7 +12,7 @@
     <h6
       class="text-muted card-subtitle mb-2" style="margin-top: 2px;">Дата начала обучения:
       <input type="date" style="margin-left: 15px;width: 163px;"
-             [formControl]="form.controls['date']" [(ngModel)]="assignment.date" required/>
+             [formControl]="form.controls['date']" [(ngModel)]="assignment.startDate" required/>
     </h6>
     <button style="margin-top: 10px" type="button" class="btn btn-outline-success" (click)="submitAssignment()">
       Назначить
